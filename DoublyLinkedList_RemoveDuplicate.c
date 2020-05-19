@@ -74,7 +74,7 @@ void sortLL(dLinkedList* listHead)
 	{
 		for(j= i->next; j != NULL; j= j->next)
 			if(i->data > j->data )
-				swap(& i->data, & j->data);
+				swap(& i->data, & j->data); // find the smallest number and swap
 	}
 }
 void findAndRemoveDuplicate(dLinkedList* listHead)
@@ -86,7 +86,7 @@ void findAndRemoveDuplicate(dLinkedList* listHead)
 		{
 			for(j= i->next; j != NULL; j= j->next)
 				if(i->data == j->data)
-					removeElement(j, & listHead);
+					removeElement(j, & listHead);// remove element with duplicate value
 		}
 }
 int main()
