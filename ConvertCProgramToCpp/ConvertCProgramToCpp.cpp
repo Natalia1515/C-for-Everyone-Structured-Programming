@@ -10,24 +10,25 @@ using namespace std;
 const int N = 40;
 
 // inline any short function
-inline int getSum(vector <int> V)
+inline void sum(int *p, int n, vector <int> V)
 {
-	int sum = 0;
+	*p = 0;
 
-	for(int i=0; i<N; i++ )
-		sum += V[i];
+	for(int i=0; i<n; i++ )
+		*p += V[i];
 
-	return sum;
 }
 
 int main()
 {
+	int accum =0;
 	// change array to vector<>
-	vector <int> V;
+	vector <int> data;
 
-	for(int i=0; i<N; i++ )
-		V.push_back(i);
+	for(int i=0; i<N; ++i)
+		data.push_back(i);
 
-	cout << "\n Sum is " << getSum(V);
+	sum(& accum, N, data);
+	cout << "Sum is " << accum ;
 	return 0;
 }
